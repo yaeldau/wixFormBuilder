@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+style(type="text/css").
+    .Y-forms_h1 {
+        background-color:  bisque;
+        margin-top: 0px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        text-align:  -webkit-center;
+    }
+
+html
+    head
+        title= title
+    body
+        h1.Y-forms_h1
+            a(href="/") Y-forms
+        br
+        br
+        table.table.table-hover
+            th= "id"
+            th= "name"
+            th= "# submissions"
+            th= "submit page"
+            th= "submissions page"
+            each form, id in forms
+                tr
+                    th= id
+                    th= form[0]
+                    th= form[2]
+                    th
+                        a(href='submit/'+id) View
+                    th
+                        a(href='submissions/'+id) View
+        br
+        br
+        center
+            a(href='/builder')
+                button(type=button).btn.btn-info Create new form!
