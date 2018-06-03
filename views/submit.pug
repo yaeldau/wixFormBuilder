@@ -9,6 +9,10 @@ style(type="text/css").
         padding-bottom: 30px;
         text-align:  -webkit-center;
     }
+    div {
+        width: max-content;
+    }
+
 
 html
     head
@@ -18,4 +22,17 @@ html
             a(href="/") Y-forms
         br
         center
-            h1= "Submit page. form: " + form_id
+            div
+                h1= "Forms Submit page"
+                br
+                h2= form_name
+                br
+
+                form(action="/submit/"+form_id, method="post")
+                    table.table.table-hover
+                        each field in fields
+                            tr
+                                th.table_content= field.label
+                                th.table_content
+                                    input.form-control(id='input_'+field.name, type=field.type, required='')
+                    button.btn.btn-primary(type='submit') submit!
