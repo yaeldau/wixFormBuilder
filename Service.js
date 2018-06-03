@@ -1,28 +1,30 @@
-let id = 0;
-let forms = [];  //[Form] -> [{id, name, fields]] -> {id: [name, {label, name, type}]}
+let id = 2;  // TODO: change to 0
+// let forms = [];  //[Form] -> [{id, name, fields]] -> {id: [name, {label, name, type}]}
+let forms = {0: {form_name: 'f1', fields: [{label: 'first name', name: 'fname', type: 'text'}], submissions: 5}, 1: {form_name: 'f2', fields: [{label: 'first name', name: 'fname', type: 'text'}], submissions: 0}};
 
 function get_id(){
     return id++;
 }
 
-function createNewForm(id, name) {
-    this.id = id;
-    this.name = name;
-    this.fields = [];
-}
 
-function createNewFeild(form_id, field_label, input_name, input_type) {
-    let obj = {};
-    obj.label = field_label;
-    obj.name = input_name;
-    obj.type = input_type;
-    forms[form_id].fields.push(obj);
-}
 
-function add_form(name, fields) {
-    forms.push([name, fields]);
-}
+module.exports = {
+    get_forms: function() {
+        return forms;
+    },
+    get_form: function(form_id) {
+        return forms[form_id];
+    },
+    createNewForm: function (name, fields) {
+        let new_form = {};
+        new_form.id = get_id();
+        new_form.form_name = name;
+        new_form.fields = fields;
+        new_form.submissions = 0;
+        forms[new_form.id] = new_form;
+        return true;
+    },
 
-export function get_name(){
-    return "yael";
-}
+
+
+};

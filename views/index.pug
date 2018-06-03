@@ -9,6 +9,14 @@ style(type="text/css").
         padding-bottom: 30px;
         text-align:  -webkit-center;
     }
+    .table_titles {
+        text-align: -webkit-center;
+        background-color: cornsilk;
+    }
+
+    .table_content {
+        text-align: -webkit-center;
+    }
 
 html
     head
@@ -17,21 +25,24 @@ html
         h1.Y-forms_h1
             a(href="/") Y-forms
         br
+        center
+            h1 Forms List page
+        br
         br
         table.table.table-hover
-            th= "id"
-            th= "name"
-            th= "# submissions"
-            th= "submit page"
-            th= "submissions page"
+            th.table_titles= "id"
+            th.table_titles= "name"
+            th.table_titles= "# submissions"
+            th.table_titles= "submit page"
+            th.table_titles= "submissions page"
             each form, id in forms
                 tr
-                    th= id
-                    th= form[0]
-                    th= form[2]
-                    th
+                    th.table_content= id
+                    th.table_content= form.form_name
+                    th.table_content= form.submissions
+                    th.table_content
                         a(href='submit/'+id) View
-                    th
+                    th.table_content
                         a(href='submissions/'+id) View
         br
         br

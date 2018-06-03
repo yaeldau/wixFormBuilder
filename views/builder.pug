@@ -9,6 +9,32 @@ style(type="text/css").
         padding-bottom: 30px;
         text-align:  -webkit-center;
     }
+    .table_titles {
+        text-align:  -webkit-center;
+        background-color:  cornsilk;
+    }
+    .table_content {
+        text-align:  -webkit-center;
+        font-weight: normal;
+        background-color:  aliceblue;
+    }
+    .new_row {
+        text-align: -webkit-center;
+        background-color: #f1f1f1;
+        font-weight: normal;
+        width: 300px;
+    }
+    .dropdown {
+        height: 33px;
+        font-weight: normal;
+        width: 300px;
+        text-align-last: center;
+        font-size: 17px;
+        padding-left: 25px;
+        background-color: #f1f1f1;
+    }
+
+
 
 html
     head
@@ -17,5 +43,54 @@ html
         h1.Y-forms_h1
             a(href="/") Y-forms
         br
-        br
-        h1= "builder page. "
+        center
+            h1= "Forms Builder page"
+            br
+            div
+                p Hi builder!
+                p Here is the page where you can create your own form.
+                p For each field please fill the label and name as free text and then choose type from the list.
+                p Enjoy!
+            br
+            form(id="builder" action="/builder" method="post")
+                label Form Name:
+                input(type='text', name='form_name', required)
+                br
+                br
+                table.table.table-hover
+                    th.table_titles Field label
+                    th.table_titles Input name
+                    th.table_titles Input type
+                    th.table_titles
+                    each field in fields
+                        tr
+                            th.table_content= field.label
+                            th.table_content= field.name
+                            th.table_content= field.type
+                            th.table_content
+                    form(id="create_field_form", action="builder", method="post")
+                        th.new_row
+                            input#label.form-control.new_row(type='text', name='label', required='')
+                        th.new_row
+                            input#name.form-control.new_row(type='text', name='name', required='')
+                        th.new_row
+                            select.form-control.dropdown(name='type', required='')
+                                option(value='text') text
+                                option(value='number') number
+                                option(value='date') date
+                                option(value='color') color
+                                option(value='email') email
+                                option(value='tel') telephone
+                        th.new_row
+                            //button.btn.btn-info(type='submit', formaction='/builder/addField') add
+                            button.btn.btn-info(type='button', onclick="createField("+label+","+name+","+type+");") add
+            br
+            br
+            center
+                button.btn.btn-primary(type='submit', formaction='/builder/addForm') create form!
+                //a(href='/thanks')
+                //    button(type=button).btn.btn-info Create form!
+
+
+
+
