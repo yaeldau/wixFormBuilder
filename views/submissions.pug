@@ -9,6 +9,17 @@ style(type="text/css").
         padding-bottom: 30px;
         text-align:  -webkit-center;
     }
+    .table_titles {
+        text-align:  -webkit-center;
+        background-color:  cornsilk;
+    }
+    .table_content {
+        text-align:  -webkit-center;
+        font-weight: normal;
+    }
+    div {
+        width: max-content;
+    }
 
 
 html
@@ -19,4 +30,25 @@ html
             a(href="/") Y-forms
         br
         center
-            h1= "Submissions page. form: " + form_id
+            h1= "Forms Submit page"
+            br
+            h2= form_name
+            br
+        br
+        center
+            table.table.table-hover
+                th.table_titles
+                each field in fields
+                    th.table_titles= field.name
+
+                - var i = 1
+                each submit in answers
+                    tr
+                        th.table_content= i++
+                        each ans, qeustion in submit
+                            th.table_content= ans
+
+        br
+        br
+
+
