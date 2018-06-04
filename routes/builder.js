@@ -27,7 +27,7 @@ router.post('/addField', urlencodedParser, function(req, res) {
 });
 
 router.post('/addForm', urlencodedParser, function(req, res) {
-    console.log("formm");
+    console.log("form");
     if (req.body.form_name == ''){
         res.render('builder', { fields: fields, msg: "please enter name for the form"});
     }
