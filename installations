@@ -1,3 +1,9 @@
+todo:
+לא לאפשר להוסיף שדה עם אותו name
+לא לאפשר להוסיף טופס עם אותו form_name
+לכתוב readme עם הוראות הרצאה (למטה)
+
+
 npm install body-parser
 
 npm install consolidate
@@ -9,8 +15,9 @@ npm install constantinople
 
 
 //
-git clone
+git clone https://github.com/yaeldau/wixFormBuilder.git
 cd wixFormBuilder
 npm install
 node bin\www
+
 
