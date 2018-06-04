@@ -38,6 +38,12 @@ style(type="text/css").
         color: red;
     }
 
+    .submit_btn {
+        width: 200px;
+        height: 50px;
+        font-size: x-large;
+    }
+
 
 html
     head
@@ -61,37 +67,39 @@ html
                 br
                 br
                 table.table.table-hover
-                    th.table_titles Field label
-                    th.table_titles Input name
-                    th.table_titles Input type
-                    th.table_titles
+                    tr
+                        th.table_titles Field label
+                        th.table_titles Input name
+                        th.table_titles Input type
+                        th.table_titles
                     each field in fields
                         tr
                             th.table_content= field.label
                             th.table_content= field.name
                             th.table_content= field.type
                             th.table_content
-                    form(id="create_field_form", method="post")
-                        th.new_row
-                            input#label.form-control.new_row(type='text', name='label')
-                        th.new_row
-                            input#name.form-control.new_row(type='text', name='name')
-                        th.new_row
-                            select.form-control.dropdown(name='type')
-                                option(value='text') text
-                                option(value='nu') number
-                                option(value='date') date
-                                option(value='color') color
-                                option(value='email') email
-                                option(value='tel') telephone
-                        th.new_row
-                            //button.btn.btn-info(type='submit', formaction='/builder/addField') add
-                            button.btn.btn-info(type='submit', formaction="/builder/addField") add
+                    tr
+                        form(id="create_field_form", method="post")
+                            th.new_row
+                                input#label.form-control.new_row(type='text', name='label')
+                            th.new_row
+                                input#name.form-control.new_row(type='text', name='name')
+                            th.new_row
+                                select.form-control.dropdown(name='type')
+                                    option(value='text') text
+                                    option(value='nu') number
+                                    option(value='date') date
+                                    option(value='color') color
+                                    option(value='email') email
+                                    option(value='tel') telephone
+                            th.new_row
+                                //button.btn.btn-info(type='submit', formaction='/builder/addField') add
+                                button.btn.btn-info(type='submit', formaction="/builder/addField") add
             label.msglabel(name='msg')= msg
             br
             br
             center
-                button.btn.btn-primary(type='submit', formaction='/builder/addForm') create form!
+                button.btn.btn-primary.submit_btn(type='submit', formaction='/builder/addForm') create form!
                 //a(href='/thanks')
                 //    button(type=button).btn.btn-info Create form!
 

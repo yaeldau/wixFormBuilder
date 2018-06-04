@@ -1,9 +1,9 @@
-let id = 2;  // TODO: change to 0
+let id = 1;  // TODO: change to 0
 // let forms = [];  //[Form] -> [{id, name, fields]] -> {id: [name, {label, name, type}]}
 let forms = {0: {form_name: 'example-form', fields: [{label: 'First name', name: 'fname', type: 'text'},
             {label: 'Age', name: 'age', type: 'number'},{label: 'Eye color', name: 'eye_color', type: 'color'}
             ,{label: 'Date of birth', name: 'bday', type: 'date'},{label: 'E-mail', name: 'email', type: 'email'}
-            ,{label: 'Phone Number', name: 'phone', type: 'tel'}], submissions: 0}};
+            ,{label: 'Phone Number', name: 'phone', type: 'tel'}], submissions: 2}};
 let answers = {0: [{fname: {content: 'yael', type: 'text'}, age: {content: '24', type: 'nu'},
         eye_color:{content: 'blue', type: 'color'}, bday:{content: '1994-03-30', type: 'date'},
         email: {content: 'yaeldau@gmail.com', type: 'email'},

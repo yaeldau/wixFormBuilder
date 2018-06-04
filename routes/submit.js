@@ -14,16 +14,17 @@ router.get('/:form_id', function(req, res, next) {
 });
 
 router.post('/:form_id', urlencodedParser, function(req, res) {
-    let ans = {};
+    let submit_ans = {};
     let fields = service.get_form(req.params.form_id).fields;
     fields.forEach(function(field){
         let ans = {};
         ans.content = req.body[field.name];
         ans.type = field.type;
-        ans[field.name] = ans;
+        submit_ans[field.name] = ans;
+        console.log(submit_ans);
         // questions form: {fname: {content: 'yael', type: 'text'}}
     });
-    service.add_submit(req.params.form_id, ans);
+    service.add_submit(req.params.form_id, submit_ans);
     res.redirect('/thanks');
 });
 

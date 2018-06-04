@@ -29,8 +29,11 @@ router.post('/addField', urlencodedParser, function(req, res) {
 
 router.post('/addForm', urlencodedParser, function(req, res) {
     console.log("form");
-    if (req.body.form_name == ''){
+    if (req.body.form_name === ''){
         res.render('builder', { fields: fields, msg: "please enter name for the form"});
+    }
+    else if(fields.length === 0){
+        res.render('builder', { fields: fields, msg: "Can't create empty form"});
     }
     else {
         service.createNewForm(req.body.form_name, fields);
