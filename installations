@@ -6,3 +6,11 @@ npm install pug
 npm install clean-css  //delete first
 npm install resolve
 npm install constantinople
+
+
+//
+git clone
+cd wixFormBuilder
+npm install
+node bin\www
+
