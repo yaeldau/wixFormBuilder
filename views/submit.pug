@@ -28,11 +28,12 @@ html
                 h2= form_name
                 br
 
-                form(id="submit_form", action="/submit/"+form_id, method="post")
+                form(action="/submit/"+form_id, method="post")
                     table.table.table-hover
                         each field in fields
                             tr
                                 th.table_content= field.label
                                 th.table_content
-                                    input.form-control(id="input_"+field.name, type=field.type, required='')
+                                    // - var cell_id = "input_"+field.name
+                                    input.form-control(name=field.name, type=field.type, required='')
                     button.btn.btn-primary(type='submit') submit!

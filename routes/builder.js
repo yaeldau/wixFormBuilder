@@ -22,7 +22,6 @@ router.post('/addField', urlencodedParser, function(req, res) {
 });
 
 router.post('/addForm', urlencodedParser, function(req, res) {
-    console.log("add_form" + req.body.form_name);
     service.createNewForm(req.body.form_name, fields);
     res.redirect('/');
 });
