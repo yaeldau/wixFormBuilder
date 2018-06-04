@@ -46,7 +46,9 @@ html
                     tr
                         th.table_content= i++
                         each ans, qeustion in submit
-                            th.table_content= ans
+                            th.table_content= ans.content
+                                if ans.type === 'color'
+                                    div(style="width: 10px; height: 10px; background-color: "+ans.content)
 
         br
         br

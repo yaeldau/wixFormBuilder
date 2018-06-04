@@ -17,7 +17,11 @@ router.post('/:form_id', urlencodedParser, function(req, res) {
     let ans = {};
     let fields = service.get_form(req.params.form_id).fields;
     fields.forEach(function(field){
-        ans[field.name] = req.body[field.name];
+        let ans = {};
+        ans.content = req.body[field.name];
+        ans.type = field.type;
+        ans[field.name] = ans;
+        // questions form: {fname: {content: 'yael', type: 'text'}}
     });
     service.add_submit(req.params.form_id, ans);
     res.redirect('/thanks');

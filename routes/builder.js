@@ -6,7 +6,8 @@ var bodyParser = require('body-parser')
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-let fields = [{label: "first name", name: 'fname', type: 'text'}, {label: "last name", name: 'lname', type: 'text'}];
+// let fields = [{label: "first name", name: 'fname', type: 'text'}, {label: "last name", name: 'lname', type: 'text'}];
+let fields = [];
 
 /* GET builder page. */
 router.get('/', function(req, res, next) {

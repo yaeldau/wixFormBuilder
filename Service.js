@@ -1,8 +1,18 @@
 let id = 2;  // TODO: change to 0
 // let forms = [];  //[Form] -> [{id, name, fields]] -> {id: [name, {label, name, type}]}
-let forms = {0: {form_name: 'f1', fields: [{label: 'first name', name: 'fname', type: 'text'},{label: 'age', name: 'age', type: 'number'}
-            ,{label: 'eye color', name: 'eye_color', type: 'color'}], submissions: 0}, 1: {form_name: 'f2', fields: [{label: 'first name', name: 'fname', type: 'text'}], submissions: 0}};
-let answers = {0: [{fname: 'yael', age: '24', eye_color:'blue'}, {fname: 'ron', age: '24', eye_color:'green'}]};
+let forms = {0: {form_name: 'example-form', fields: [{label: 'First name', name: 'fname', type: 'text'},
+            {label: 'Age', name: 'age', type: 'number'},{label: 'Eye color', name: 'eye_color', type: 'color'}
+            ,{label: 'Date of birth', name: 'bday', type: 'date'},{label: 'E-mail', name: 'email', type: 'email'}
+            ,{label: 'Phone Number', name: 'phone', type: 'tel'}], submissions: 0}};
+let answers = {0: [{fname: {content: 'yael', type: 'text'}, age: {content: '24', type: 'nu'},
+        eye_color:{content: 'blue', type: 'color'}, bday:{content: '1994-03-30', type: 'date'},
+        email: {content: 'yaeldau@gmail.com', type: 'email'},
+        phone: {content: '0509667566', type: 'tel'}},
+        {fname: {content: 'ron', type: 'text'}, age: {content: '24', type: 'nu'},
+            eye_color:{content: 'green', type: 'color'}, bday:{content: '1994-08-04', type: 'date'},
+            email: {content: 'ronch@gmail.com', type: 'email'},
+            phone: {content: '05058266218', type: 'tel'}}]};
+
 function get_id(){
     return id++;
 }
