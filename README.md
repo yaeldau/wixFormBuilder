@@ -4,11 +4,11 @@
 git clone https://github.com/yaeldau/wixFormBuilder.git
 
 
-cd wixFormBuilder
+$ cd wixFormBuilder
 
-npm install
+$ npm install
 
-node bin\www
+$ node bin\www
 
 
 ### enjoy!
