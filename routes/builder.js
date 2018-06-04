@@ -16,14 +16,25 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/addField', urlencodedParser, function(req, res) {
-    createField(req.body.label, req.body.name, req.body.type);
-    // res.render('builder', { fields: fields});
+    console.log("filed");
+    if (req.body.label == '' || req.body.name == ''){
+        res.render('builder', { fields: fields, msg: "please fill all boxs"});
+    }
+    else {
+        createField(req.body.label, req.body.name, req.body.type);
+    }
     res.redirect('/builder');
 });
 
 router.post('/addForm', urlencodedParser, function(req, res) {
-    service.createNewForm(req.body.form_name, fields);
-    res.redirect('/');
+    console.log("formm");
+    if (req.body.form_name == ''){
+        res.render('builder', { fields: fields, msg: "please enter name for the form"});
+    }
+    else {
+        service.createNewForm(req.body.form_name, fields);
+        res.redirect('/');
+    }
 });
 
 function createField(label, name, type){

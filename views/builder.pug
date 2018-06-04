@@ -33,7 +33,10 @@ style(type="text/css").
         padding-left: 25px;
         background-color: #f1f1f1;
     }
-
+    .msglabel {
+        font-size: xx-large;
+        color: red;
+    }
 
 
 html
@@ -52,9 +55,9 @@ html
                 p For each field please fill the label and name as free text and then choose type from the list.
                 p Enjoy!
             br
-            form(id="builder" action="/builder" method="post")
+            form(id="builder" , onsubmit="/builder/addForm", method="post")
                 label Form Name:
-                input(type='text', name='form_name', required)
+                input(type='text', name='form_name')
                 br
                 br
                 table.table.table-hover
@@ -68,13 +71,13 @@ html
                             th.table_content= field.name
                             th.table_content= field.type
                             th.table_content
-                    form(id="create_field_form", action="builder", method="post")
+                    form(id="create_field_form", method="post")
                         th.new_row
-                            input#label.form-control.new_row(type='text', name='label', required='')
+                            input#label.form-control.new_row(type='text', name='label')
                         th.new_row
-                            input#name.form-control.new_row(type='text', name='name', required='')
+                            input#name.form-control.new_row(type='text', name='name')
                         th.new_row
-                            select.form-control.dropdown(name='type', required='')
+                            select.form-control.dropdown(name='type')
                                 option(value='text') text
                                 option(value='number') number
                                 option(value='date') date
@@ -83,7 +86,8 @@ html
                                 option(value='tel') telephone
                         th.new_row
                             //button.btn.btn-info(type='submit', formaction='/builder/addField') add
-                            button.btn.btn-info(type='button', onclick="createField("+label+","+name+","+type+");") add
+                            button.btn.btn-info(type='submit', formaction="/builder/addField") add
+            label.msglabel(name='msg')= msg
             br
             br
             center
