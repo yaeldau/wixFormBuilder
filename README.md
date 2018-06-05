@@ -6,7 +6,7 @@ Open a shell and traverse to a directory in your computer where you wish to stor
 sources for the form builder application. For example, in Windows:
 ```shell
 $  mkdir empty_folder
-$ cd empty_folder
+$  cd empty_folder
 ```
 In a git shell, execute the following command:
 ```shell

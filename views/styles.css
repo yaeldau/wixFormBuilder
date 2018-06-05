@@ -1,0 +1,28 @@
+
+.Y-forms_h1 {
+  background-color:  bisque;
+  margin-top: 0px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align:  -webkit-center;
+}
+.table_titles {
+    text-align:  -webkit-center;
+    background-color:  cornsilk;
+}
+.table_content {
+    text-align:  -webkit-center;
+    font-weight: normal;
+}
+.btn {
+    width: 250px;
+    height: 50px;
+    font-size: x-large;
+}
+
+div {
+    width: max-content;
+}
+.column {
+    width: 200px;
+}

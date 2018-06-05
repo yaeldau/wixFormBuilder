@@ -1,39 +1,21 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-style(type="text/css").
-    .Y-forms_h1 {
-        background-color:  bisque;
-        margin-top: 0px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        text-align:  -webkit-center;
-    }
-    div {
-        width: max-content;
-    }
 
-
-html
-    head
-        title= "Submit page"
-    body
-        h1.Y-forms_h1
-            a(href="/") Y-forms
+include header.pug
+center
+    div
+        h1= "Forms Submit page"
         br
-        center
-            div
-                h1= "Forms Submit page"
-                br
-                h2= form_name
-                br
+        h2= form_name
+        br
 
-                form(action="/submit/"+form_id, method="post")
-                    table.table.table-hover
-                        each field in fields
-                            tr
-                                th.table_content= field.label
-                                th.table_content
-                                    // - var cell_id = "input_"+field.name
-                                    input.form-control(name=field.name, type=field.type, required='')
-                    button.btn.btn-primary(type='submit') submit!
+        form(action="/submit/"+form_id, method="post")
+            table.table.table-hover
+                each field in fields
+                    tr
+                        th.table_content= field.label
+                        th.table_content
+                            // - var cell_id = "input_"+field.name
+                            input.form-control(name=field.name, type=field.type, required='')
+            button.btn.btn-primary(type='submit') submit!

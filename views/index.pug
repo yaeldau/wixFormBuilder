@@ -1,59 +1,33 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-style(type="text/css").
-    .Y-forms_h1 {
-        background-color:  bisque;
-        margin-top: 0px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        text-align:  -webkit-center;
-    }
-    .table_titles {
-        text-align:  -webkit-center;
-        background-color:  cornsilk;
-    }
-    .table_content {
-        text-align:  -webkit-center;
-        font-weight: normal;
-    }
-    .btn {
-        width: 250px;
-        height: 50px;
-        font-size: x-large;
-    }
 
+include header.pug
 
-html
-    head
-        title= title
-    body
-        h1.Y-forms_h1
-            a(href="/") Y-forms
-        br
-        center
-            h1 Forms List page
-            br
-            br
-            a(href='/builder')
-                button(type=button).btn.btn-info.btn Create new form!
-        br
-        br
-        table.table.table-hover
-            th.table_titles= "id"
-            th.table_titles= "name"
-            th.table_titles= "# submissions"
-            th.table_titles= "submit page"
-            th.table_titles= "submissions page"
-            each form, id in forms
-                tr
-                    th.table_content= id
-                    th.table_content= form.form_name
-                    th.table_content= form.submissions
-                    th.table_content
-                        a(href='submit/'+id) View
-                    th.table_content
-                        a(href='submissions/'+id) View
-        br
-        br
+center
+    h1= "Forms List page"
+    br
+    br
+    a(href='/builder')
+        button(type=button).btn.btn-info.btn Create new form!
+    br
+    br
+    br
+    table.table.table-hover
+        th.table_titles= "id"
+        th.table_titles= "name"
+        th.table_titles= "# submissions"
+        th.table_titles= "submit page"
+        th.table_titles= "submissions page"
+        each form, id in forms
+            tr
+                th.table_content= id
+                th.table_content= form.form_name
+                th.table_content= form.submissions
+                th.table_content
+                    a(href='submit/'+id) View
+                th.table_content
+                    a(href='submissions/'+id) View
+    br
+    br
 
