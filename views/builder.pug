@@ -45,64 +45,56 @@ style(type="text/css").
     }
 
 
-html
-    head
-        title= "Submit page"
-    body
-        h1.Y-forms_h1
-            a(href="/") Y-forms
+include header
+div.nav
+    h1.backBtn
+        a(href="/") back to homepage
+center
+    h1= "Forms Builder page"
+    br
+    div
+        p Hi builder!
+        p Here is the page where you can create your own form.
+        p For each field please fill the label and name as free text and then choose type from the list.
+        p Enjoy!
+    br
+    form(id="builder" , onsubmit="/builder/addForm", method="post")
+        label Form Name:
+        input(type='text', name='form_name')
         br
-        center
-            h1= "Forms Builder page"
-            br
-            div
-                p Hi builder!
-                p Here is the page where you can create your own form.
-                p For each field please fill the label and name as free text and then choose type from the list.
-                p Enjoy!
-            br
-            form(id="builder" , onsubmit="/builder/addForm", method="post")
-                label Form Name:
-                input(type='text', name='form_name')
-                br
-                br
-                table.table.table-hover
-                    tr
-                        th.table_titles Field label
-                        th.table_titles Input name
-                        th.table_titles Input type
-                        th.table_titles
-                    each field in fields
-                        tr
-                            th.table_content= field.label
-                            th.table_content= field.name
-                            th.table_content= field.type
-                            th.table_content
-                    tr
-                        form(id="create_field_form", method="post")
-                            th.new_row
-                                input#label.form-control.new_row(type='text', name='label')
-                            th.new_row
-                                input#name.form-control.new_row(type='text', name='name')
-                            th.new_row
-                                select.form-control.dropdown(name='type')
-                                    option(value='text') text
-                                    option(value='nu') number
-                                    option(value='date') date
-                                    option(value='color') color
-                                    option(value='email') email
-                                    option(value='tel') telephone
-                            th.new_row
-                                //button.btn.btn-info(type='submit', formaction='/builder/addField') add
-                                button.btn.btn-info(type='submit', formaction="/builder/addField") add
-            label.msglabel(name='msg')= msg
-            br
-            br
-            center
-                button.btn.btn-primary.submit_btn(type='submit', formaction='/builder/addForm') create form!
-                //a(href='/thanks')
-                //    button(type=button).btn.btn-info Create form!
-
-
-
+        br
+        table.table.table-hover
+            tr
+                th.table_titles Field label
+                th.table_titles Input name
+                th.table_titles Input type
+                th.table_titles
+            each field in fields
+                tr
+                    th.table_content= field.label
+                    th.table_content= field.name
+                    th.table_content= field.type
+                    th.table_content
+            tr
+                form(id="create_field_form", method="post")
+                    th.new_row
+                        input#label.form-control.new_row(type='text', name='label')
+                    th.new_row
+                        input#name.form-control.new_row(type='text', name='name')
+                    th.new_row
+                        select.form-control.dropdown(name='type')
+                            option(value='text') text
+                            option(value='nu') number
+                            option(value='date') date
+                            option(value='color') color
+                            option(value='email') email
+                            option(value='tel') telephone
+                    th.new_row
+                        //button.btn.btn-info(type='submit', formaction='/builder/addField') add
+                        button.btn.btn-info(type='submit', formaction="/builder/addField") add
+    label.msglabel(name='msg')= msg
+    br
+    br
+    center
+        button.btn.btn-primary.submit_btn(type='submit', formaction='/builder/addForm') create form!
 

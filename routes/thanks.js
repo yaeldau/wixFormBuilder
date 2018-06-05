@@ -1,11 +1,11 @@
 
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 const service = require('../Service');
 
 
 /* GET thanks page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
     res.render('thanks', { title: 'Express'});
 });
 

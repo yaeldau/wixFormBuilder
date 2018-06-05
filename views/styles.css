@@ -1,10 +1,11 @@
 
 .Y-forms_h1 {
-  background-color:  bisque;
-  margin-top: 0px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  text-align:  -webkit-center;
+    background-color:  bisque;
+    margin-top: 0px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align:  -webkit-center;
+    margin-bottom: 0px;
 }
 .table_titles {
     text-align:  -webkit-center;
@@ -25,4 +26,15 @@ div {
 }
 .column {
     width: 200px;
+}
+
+.nav {
+    background-color: lightgrey;
+    width: -webkit-fill-available;
+}
+.backBtn {
+    font-size: large;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
 }

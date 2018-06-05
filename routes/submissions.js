@@ -1,11 +1,11 @@
 
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 const service = require('../Service');
 
 
 /* GET submissions page. */
-router.get('/:form_id', function(req, res, next) {
+router.get('/:form_id', function(req, res) {
     let form = service.get_form(req.params.form_id);
     let form_answers = service.get_answers(req.params.form_id);
     console.log(form_answers);

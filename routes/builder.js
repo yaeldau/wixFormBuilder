@@ -1,24 +1,22 @@
 
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
 const service = require('../Service');
-var bodyParser = require('body-parser')
+let bodyParser = require('body-parser')
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+let urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-// let fields = [{label: "first name", name: 'fname', type: 'text'}, {label: "last name", name: 'lname', type: 'text'}];
+// fields form ~ [{label: "first name", name: 'fname', type: 'text'}, {label: "last name", name: 'lname', type: 'text'}];
 let fields = [];
 
 /* GET builder page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
 
-    // let id = service.createNewForm(name, fields);
     res.render('builder', { fields: fields});
 });
 
 router.post('/addField', urlencodedParser, function(req, res) {
-    console.log("filed");
-    if (req.body.label == '' || req.body.name == ''){
+    if (req.body.label === '' || req.body.name === ''){
         res.render('builder', { fields: fields, msg: "please fill all boxs"});
     }
     else {
@@ -28,7 +26,6 @@ router.post('/addField', urlencodedParser, function(req, res) {
 });
 
 router.post('/addForm', urlencodedParser, function(req, res) {
-    console.log("form");
     if (req.body.form_name === ''){
         res.render('builder', { fields: fields, msg: "please enter name for the form"});
     }
@@ -48,7 +45,6 @@ function createField(label, name, type){
     field.type = type;
     fields.push(field);
 }
-
 
 
 
