@@ -38,3 +38,19 @@ div {
     margin-bottom: 5px;
     margin-left: 10px;
 }
+.msgLabel {
+    color: red;
+    font-size: 22px;
+}
+.addBtn{
+    font-size: initial;
+    width: 60px;
+    height: 35px;
+    text-align: center;
+    flex-flow: initial;
+}
+.clearFormBtn {
+    width: fit-content;
+    height: initial;
+    font-size: inherit;
+}

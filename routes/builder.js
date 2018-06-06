@@ -39,8 +39,14 @@ router.post('/addForm', urlencodedParser, function(req, res) {
     }
     else {
         service.createNewForm(req.body.form_name, fields);
+        cleanPage();
         res.redirect('/');
     }
+});
+
+router.post('/clearForm', urlencodedParser, function(req, res) {
+    cleanPage();
+    res.render('builder', { fields: fields, form_name: form_name});
 });
 
 function createField(label, name, type){
@@ -53,6 +59,7 @@ function createField(label, name, type){
 
 function cleanPage(){
     fields = [];
+    form_name = '';
 }
 
 

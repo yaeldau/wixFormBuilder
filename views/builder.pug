@@ -31,6 +31,8 @@ center
                 tr
                     th.table_content= field.label
                     th.table_content= field.name
+                    - if (field.type === 'nu')
+                        - field.type = 'number'
                     th.table_content= field.type
                     th.table_content
             tr
@@ -48,13 +50,19 @@ center
                             option(value='email') email
                             option(value='tel') telephone
                     th.new_row
-                        button.btn.btn-info(type='submit', formaction="/builder/addField") add
+                        button.btn.btn-info.addBtn(type='submit', formaction="/builder/addField") add
     label.msglabel(name='msg')= msg
     br
     br
     center
         button.btn.btn-primary.submit_btn(type='submit', formaction='/builder/addForm') create form!
+        br
+        br
+        br
+        br
+        button.btn.btn-danger.clearFormBtn(type='submit', formaction='/builder/clearForm') clear form
     br
     br
     br
+
 

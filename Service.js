@@ -45,15 +45,12 @@ module.exports = {
       return answers[form_id];
     },
     check_if_form_name_unused: function(possible_name){
-        console.log("service1");
         for (let form_id in forms) {
-            console.log("service2");
             if (forms[form_id].form_name === possible_name){
                 return false;
             }
         }
 
-        console.log("service3");
         return true;
     },
 };
