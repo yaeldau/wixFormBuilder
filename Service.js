@@ -44,5 +44,13 @@ module.exports = {
     get_answers: function (form_id) {
       return answers[form_id];
     },
-
+    check_if_form_name_unused: function(possible_name){
+        console.log("service");
+        forms.forEach(function (form){
+            if (form.form_name === possible_name){
+                return false;
+            }
+        });
+        return true;
+    },
 };
