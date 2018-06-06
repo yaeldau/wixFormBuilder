@@ -21,10 +21,14 @@ router.post('/addField', urlencodedParser, function(req, res) {
     if (req.body.label === '' || req.body.name === ''){
         res.render('builder', { fields: fields, form_name: form_name, msg: "please fill all boxs"});
     }
+    else if (!is_field_name_unused(req.body.name)){
+        res.render('builder', { fields: fields, form_name: form_name, msg: "input name already exist, please choose another name"});
+    }
     else {
         createField(req.body.label, req.body.name, req.body.type);
+        res.redirect('/builder');
     }
-    res.redirect('/builder');
+
 });
 
 router.post('/addForm', urlencodedParser, function(req, res) {
@@ -60,6 +64,16 @@ function createField(label, name, type){
 function cleanPage(){
     fields = [];
     form_name = '';
+}
+
+function is_field_name_unused(possible_name){
+    let res = true;
+    fields.forEach(function (f) {
+        if (res && (f.name.localeCompare(possible_name) === 0)){
+            res = false;
+        }
+    });
+    return res;
 }
 
 
