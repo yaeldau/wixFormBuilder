@@ -20,6 +20,8 @@ $ npm install
 $ node bin\www
 ```
 
+In order to get to the website - open your browser (chrome, preferably) and type in the address box the following:
+http://localhost:3000
 
 ### enjoy!
 
