@@ -21,7 +21,6 @@ router.post('/:form_id', urlencodedParser, function(req, res) {
         ans.content = req.body[field.name];
         ans.type = field.type;
         submit_ans[field.name] = ans;
-        console.log(submit_ans);
         // questions form: {fname: {content: 'yael', type: 'text'}}
     });
     service.add_submit(req.params.form_id, submit_ans);
