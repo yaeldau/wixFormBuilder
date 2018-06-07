@@ -1,8 +1,8 @@
 
-let express = require('express');
+const express = require('express');
 let router = express.Router();
 const service = require('../Service');
-let bodyParser = require('body-parser')
+const bodyParser = require('body-parser')
 
 let urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -26,7 +26,7 @@ router.post('/addField', urlencodedParser, function(req, res) {
     }
     else {
         createField(req.body.label, req.body.name, req.body.type);
-        res.redirect('/builder');
+        res.render('builder', { fields: fields, form_name: form_name});
     }
 
 });
