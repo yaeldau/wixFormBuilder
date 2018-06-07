@@ -6,7 +6,7 @@ const service = require('../Service');
 
 /* GET thanks page. */
 router.get('/', function(req, res) {
-    res.render('thanks', { title: 'Express'});
+    res.render('thanks', {});
 });
 
 

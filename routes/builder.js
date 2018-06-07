@@ -2,7 +2,7 @@
 const express = require('express');
 let router = express.Router();
 const service = require('../Service');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 
 let urlencodedParser = bodyParser.urlencoded({ extended: false });
 

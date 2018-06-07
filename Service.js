@@ -1,5 +1,6 @@
-let id = 1;  // TODO: change to 0
+let id = 1;
 // let forms = [];  //[Form] -> [{id, name, fields]] -> {id: [name, {label, name, type}]}
+// data example
 let forms = {0: {form_name: 'example-form', fields: [{label: 'First name', name: 'fname', type: 'text'},
             {label: 'Age', name: 'age', type: 'number'},{label: 'Eye color', name: 'eye_color', type: 'color'}
             ,{label: 'Date of birth', name: 'bday', type: 'date'},{label: 'E-mail', name: 'email', type: 'email'}
